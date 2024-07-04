@@ -3,12 +3,6 @@
     "baseUrl": "./",
     "paths": {
       "@/*": [ "src/*" ],
-    } ,
-    "target": "ES6",
-    "module": "commonjs",
-    "moduleResolution": "classic",
-    "allowSyntheticDefaultImports": true
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
 }
