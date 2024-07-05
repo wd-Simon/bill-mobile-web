@@ -23,24 +23,24 @@
     },
     {
       "type": "pay",
-      "money": 100,
+      "money": -100,
       "date": "2022-11-24 10:40:23",
       "userFor": "drinks",
       "id": 4
     },
     {
       "type": "pay",
-      "money": 100,
-      "date": "2024-07-04 10:40:23",
-      "userFor": "drinks",
-      "id": 5
-    },
-    {
-      "type": "pay",
-      "money": 110,
+      "money": -110,
       "date": "2024-07-05 10:40:23",
       "userFor": "drinks",
       "id": 6
+    },
+    {
+      "type": "income",
+      "money": 50,
+      "date": "2024-07-05 12:40:23",
+      "userFor": "drinksss",
+      "id": 7
     }
   ]
 }
