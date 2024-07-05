@@ -37,27 +37,5 @@
         }
       }
     }
-    .detailWrapper{
-      padding: 10px 10px 0 10px;
-      .item{
-        background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-        padding: 10px 10px;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        -o-border-radius: 5px;
-        margin-bottom: 5px;
-        .baseInfo{
-          margin-bottom: 5px;
-          display: flex;
-          justify-content: space-between;
-        }
-        .moneyInfo{
-          display: flex;
-          justify-content: space-between;
-        }
-      }
-    }
   }
 }

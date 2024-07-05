@@ -1,6 +1,6 @@
 import { NavBar, DatePicker } from 'antd-mobile'
 import './index.scss'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
 import _ from 'lodash'
@@ -28,7 +28,6 @@ function Month() {
   const onDateConfirm = (date) => {
     setDateVisible(false)
     setCurrentDate(dayjs(date).format('YYYY-MM'))
-    console.log(monthGroup[currentDate])
     setCurrentMonthList(monthGroup[currentDate])
   }
 
@@ -42,7 +41,15 @@ function Month() {
       balance: incomeTotal + payTotal,
     }
   }, [currentMonthList])
-  console.log(moneyTotal)
+
+  // 初始化时显示当前月份的数据
+  useEffect(() => {
+    const nowDate = dayjs().format('YYYY-MM')
+    // 边界值控制
+    if (monthGroup[nowDate]) {
+      setCurrentMonthList(monthGroup[nowDate])
+    }
+  }, [monthGroup])
 
   return (
     <div className='monthlyBill'>
@@ -85,21 +92,7 @@ function Month() {
             onConfirm={val => onDateConfirm(val)}
           />
         </div>
-        {/* 明细 */}
-        <div className='detailWrapper'>
-          { currentMonthList.map((item) => (
-            <div key={item.id} className='item'>
-              <div className='baseInfo'>
-                <span>时间: {item.date}</span>
-                <span>类型: {item.type === 'pay' ? '支出' : '收入'}</span>
-              </div>
-              <div className='moneyInfo'>
-                <span>金额: {item.money}元</span>
-                <span>备注: {item.userFor}</span>
-              </div>
-            </div>
-          )) }
-        </div>
+        {/* 单日账单 */}
       </div>
     </div>
   )
